@@ -2,7 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using System.Diagnostics;
 
 public class button_functions : MonoBehaviour
 {
@@ -19,13 +21,34 @@ public class button_functions : MonoBehaviour
     }
 
 
+//START : opens a build in keyboard for windows 10 or 11
+    public void openKeyboardOnClick()
+    {
+        if (Input.GetMouseButtonDown(0)) {
+            OpenWindowsKeyboard();
+        }
+    }
+
+    private void OpenWindowsKeyboard() {
+        Process.Start("osk.exe"); 
+    }
+
+    private void CloseWindowsKeyboard() {
+        Process[] oskProcess = Process.GetProcessesByName("osk");
+        foreach (Process p in oskProcess)
+        {
+            p.Kill();  
+        }
+    }
+// END : opens a build in keyboard for windows 10 or 11
+
 
 
 // for debugging of button elements
-    public void checkIfClickable_for_debbugging(Button button)
-    {
-        Debug.Log("Button "+ button +" is Clicked");
-    }
+    // public void checkIfClickable_for_debbugging(Button button)
+    // {
+    //     Debug.Log("Button "+ button +" is Clicked");
+    // }
 
 // on click open url and close the app
     public void on_click_open_then_close(string url)
