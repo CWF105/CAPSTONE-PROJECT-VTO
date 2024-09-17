@@ -2,15 +2,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class button_functions : MonoBehaviour
 {
 // firt start of the application
+    public GameObject UIPanel;
+    public GameObject texts;
     public GameObject digitalPenUIPanel;
 
     void Start()
     {
         digitalPenUIPanel.SetActive(false);
+        texts.SetActive(true);
+        UIPanel.SetActive(false);
     }
 
 
@@ -52,6 +57,11 @@ public class button_functions : MonoBehaviour
         }
     }
 
+    public void onClickShowPanel()
+    {
+        texts.SetActive(!texts.activeSelf);
+        UIPanel.SetActive(!UIPanel.activeSelf);
+    }
 
 
 
