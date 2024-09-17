@@ -66,3 +66,4 @@
 *.hlsl filter=lfs diff=lfs merge=lfs -text
 *.prefab filter=lfs diff=lfs merge=lfs -text
 *.wasm filter=lfs diff=lfs merge=lfs -text
+Assets/Assets/Packages/MediapipeUnity filter=lfs diff=lfs merge=lfs -text
